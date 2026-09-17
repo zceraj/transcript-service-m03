@@ -21,9 +21,16 @@ describe('addStudent', () => {
 
 // Mutation 2: Line 43 - innocuous 
 
-// Mutation 3: Line 53 - non-innocuous
+// Mutation 3: Line 53 - non-innocuous - Zara 
+describe('nameToIDs', () => {
+    it("should return an array of student IDs for a given student name", () => {
+        db.addStudent("abby"); 
+        db.addStudent("blair");
+        expect(db.nameToIDs("abby")).toEqual([1]);
+    })
+})
 
-// Mutation 4: Line 54 - non- innocuous
+// Mutation 4: Line 54 - non-innocuous
 
 // Mutation 5: Line 70 - innocuous
 
