@@ -12,14 +12,19 @@ beforeEach(() => {
 // and non-innocuous (did introduce a bug). 
 // Note: Student IDs should be positive.
 
-// Mutation 1: Line 40 - non-innocuous
 describe('addStudent', () => {
+    // Mutation 1: Line 40 - non-innocuous
     it("Student IDs returns should be positive", () => {
         expect(db.addStudent("test student")).toBeGreaterThan(0);
     })
+
+    // Mutation 2: Line 43 - non-innocuous 
+    it("Transcript starts as empty list", () => {
+        const studentId = db.addStudent("test student");
+        expect(db.getTranscript(studentId).grades).toEqual([]);
+    });
 })
 
-// Mutation 2: Line 43 - innocuous 
 
 // Mutation 3: Line 53 - non-innocuous
 
